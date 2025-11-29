@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hakkadaikon Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Fredoka', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              pixel: ['VT323', 'monospace'],
+            },
+            colors: {
+              hakka: {
+                primary: '#f98476', // Requested Red/Salmon
+                accent: '#ffcc00', // Game Coin Gold
+                success: '#88d66c', // Retro Green
+                blue: '#74b9ff', // Sky Blue
+                dark: '#2d3436', // Ink Black
+                light: '#fff4f2', // Warm White
+                surface: '#ffffff',
+                shadow: '#1e272e', // Deep shadow color
+              }
+            },
+            boxShadow: {
+              'game': '4px 4px 0px 0px #2d3436',
+              'game-sm': '2px 2px 0px 0px #2d3436',
+              'game-lg': '8px 8px 0px 0px #2d3436',
+              'game-xl': '12px 12px 0px 0px #2d3436',
+              'game-press': '0px 0px 0px 0px #2d3436', // Pressed state
+              'inner-game': 'inset 3px 3px 0px 0px rgba(45, 52, 54, 0.1)',
+            },
+            backgroundImage: {
+              'halftone': 'radial-gradient(#2d3436 1px, transparent 1px)',
+              'stripes': 'repeating-linear-gradient(45deg, #f98476 0, #f98476 10px, transparent 10px, transparent 20px)',
+            },
+            animation: {
+              'bounce-sm': 'bounce-sm 0.5s infinite alternate',
+              'marquee': 'marquee 25s linear infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              'bounce-sm': {
+                '0%': { transform: 'translateY(0)' },
+                '100%': { transform: 'translateY(-4px)' },
+              },
+              'marquee': {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #fff4f2;
+        color: #2d3436;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #2d3436; 
+        border-left: 2px solid #2d3436;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ffcc00; 
+        border: 2px solid #2d3436;
+        border-radius: 0px; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f98476; 
+      }
+      
+      .pattern-dots {
+        background-image: radial-gradient(#2d3436 1.5px, transparent 1.5px);
+        background-size: 16px 16px;
+      }
+      
+      .pattern-grid {
+        background-image: 
+          linear-gradient(to right, rgba(45, 52, 54, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(45, 52, 54, 0.1) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+
+      .clip-diagonal {
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+      }
+      
+      .clip-tag {
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+      }
+
+      pre {
+        scrollbar-width: thin;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

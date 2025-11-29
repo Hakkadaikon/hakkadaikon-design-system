@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap');
+
+@theme {
+  --font-sans: 'Fredoka', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-pixel: 'VT323', monospace;
+
+  --color-hakka-primary: #f98476;
+  --color-hakka-accent: #ffcc00;
+  --color-hakka-success: #88d66c;
+  --color-hakka-blue: #74b9ff;
+  --color-hakka-dark: #2d3436;
+  --color-hakka-light: #fff4f2;
+  --color-hakka-surface: #ffffff;
+  --color-hakka-shadow: #1e272e;
+
+  --shadow-game: 4px 4px 0px 0px #2d3436;
+  --shadow-game-sm: 2px 2px 0px 0px #2d3436;
+  --shadow-game-lg: 8px 8px 0px 0px #2d3436;
+  --shadow-game-xl: 12px 12px 0px 0px #2d3436;
+  --shadow-game-press: 0px 0px 0px 0px #2d3436;
+  --shadow-inner-game: inset 3px 3px 0px 0px rgba(45, 52, 54, 0.1);
+
+  --animate-bounce-sm: bounce-sm 0.5s infinite alternate;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-pulse-fast: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes bounce-sm {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+body {
+  background-color: #fff4f2;
+  color: #2d3436;
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #2d3436;
+  border-left: 2px solid #2d3436;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border: 2px solid #2d3436;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f98476;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(#2d3436 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+.pattern-grid {
+  background-image:
+    linear-gradient(to right, rgba(45, 52, 54, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 52, 54, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.clip-tag {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+}
+
+pre {
+  scrollbar-width: thin;
+}
